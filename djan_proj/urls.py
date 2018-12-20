@@ -17,9 +17,13 @@ from django.contrib import admin
 from django.urls import path
 from pages.views import index
 from pages.views import search
+from pages.views import start
 
 urlpatterns = [
     path('', index),
     path('search', search),
     path('admin/', admin.site.urls),
+    path('start', start)
 ]
+
+

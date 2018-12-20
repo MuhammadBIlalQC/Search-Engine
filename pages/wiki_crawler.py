@@ -1,6 +1,7 @@
-from bs4 import BeautifulSoup as BS4
-from .info_retrieval import tokenizeAndSave
+"""from bs4 import BeautifulSoup as BS4
 import requests
+from .info_retrieval import tokenizeAndSave
+
 
 
 def runCrawler(start_link):
@@ -17,7 +18,7 @@ def runCrawler(start_link):
                 links_crawled.append(href)
                 print(href)
                 crawlLinks(href, i = i + 1)
-    
+
     crawlLinks(start_link)
 
 
@@ -32,3 +33,4 @@ def getTextFromPage(page):
             print('Error')
         text_gathered += text;
     return text;
+"""
