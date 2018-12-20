@@ -58,7 +58,7 @@ def crawlLink(request):
         pass
     print('initiating crawl of URL ' + crawl)
     runCrawler(crawl)
-    return HttpResponse('CRAWLING')
+
 
 
 def tokenizeAndSave(docID, text):
@@ -73,6 +73,9 @@ def runCrawler(start_link):
     i = 0;
 
     def crawlLinks(start_link):
+        if len((SearchResult.objects.filter(link=start_link))) != 0:
+            print('Returning')
+            return
         req = requests.get(start_link)
         page = BS4(req.text, features="html.parser")
         text = getTextFromPage(page);
