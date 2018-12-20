@@ -6,9 +6,30 @@
     <body>
         <div class="container" style="padding-top: 10%">
             <div class="row">
-                <div class="col-md-offset-2 col-md-8">
-                    {% for link in links %}
-                    <a href="{{link}}">{{link}}</a> <br>
+                <div class="col-md-offset-2 col-md-6 col-sm-12">
+                    {% load static %}
+                    <a href="/"><img style="width:100%" src="{% static 'logo.png' %}"></a>
+                </div>
+            </div>
+            <div class="col-md-offset-3 col-md-5 col-sm-12">
+                <form>
+                    <input type="text" placeholder="search" style="margin-right: 0px" name="query" required><button type="submit" class="btn btn-primary" style="margin-left: 0px"  > <span class="glyphicon glyphicon-search"></span></button>
+                </form>
+            </div>
+            {% if error == True %}
+            <div class="row">
+                <div class="col-md-offset-1 col-md-8 col-sm-12">
+                    <h2>Uh-oh, we could not find any results</h2>
+                </div>
+            </div>
+            {% endif %}
+            <div class="row">
+                <div class="col-md-offset-1 col-md-8 col-sm-12">
+                    {% for result in results %}
+                    <h4><a href="{{result.link}}">{{result.title}}</a></h4>
+                    <a href="{{result.link}}">{{result.link}}</a>
+                    <p>{{result.description}}</p>
+                    <br>
                     {% endfor %}
                 </div>
             </div>

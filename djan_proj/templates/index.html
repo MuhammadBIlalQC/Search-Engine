@@ -1,5 +1,10 @@
 <html>
     <head>
+             <script
+                src="https://code.jquery.com/jquery-2.2.4.min.js"
+                integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+                crossorigin="anonymous">
+             </script>
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     </head>
@@ -9,11 +14,21 @@
                 <div class="col-md-offset-2 col-md-8">
                     {% load static %}
                     <img src="{% static 'logo.png' %}" style="width:100%" alt="My image">
-                    <form style="width: 100%; padding: 0 30% 0 30%;" action="/search">
-                        <input type="text" name="query" id="query"><input type="submit" value="Search">                       
+                    <form style="width: 100%; padding: 0 30% 0 30%;" action="/search" style="padding:0px;height:35px;">
+                        <input type="text" name="query" id="query" style="height:35px;margin-right:0.4px;"><button style="height:35px; -moz-border-radius: 0px; -webkit-border-radius: 0px; border-radius: 0px;" type="submit" class="btn btn-primary"> <span class="glyphicon glyphicon-search"></span></button>
+                    </form>
+                    <a href="#" onclick="toggleCrawlLinks()">Crawl Links</a>
+                    <form id="crawlForm" style="display:none" method="get" action="/crawlLink">
+                        <input name="link" type="text"><button type="submit">Crawl</button>
                     </form>
                 </div>
             </div>
         </div>
+        <script>
+            function toggleCrawlLinks()
+            {
+                $('#crawlForm').slideDown()
+            }
+        </script>
     </body>
 </html>
