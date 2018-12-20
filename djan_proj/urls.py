@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from pages.views import index
 from pages.views import search
+
 urlpatterns = [
     path('', index),
     path('search', search),
