@@ -1,5 +1,6 @@
 <html>
     <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
              <script
                 src="https://code.jquery.com/jquery-2.2.4.min.js"
                 integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
@@ -11,11 +12,11 @@
     <body>
         <div class="container" style="padding-top: 10%">
             <div class="row">
-                <div class="col-md-offset-2 col-md-8">
+                <div class="col-md-offset-2 col-md-8 col-sm-12 col-xs-12">
                     {% load static %}
                     <img src="{% static 'logo.png' %}" style="width:100%" alt="My image">
                     <form style="width: 100%; padding: 0 30% 0 30%;" action="/search" style="padding:0px;height:35px;">
-                        <input type="text" name="query" id="query" style="height:35px;margin-right:0.4px;"><button style="height:35px; -moz-border-radius: 0px; -webkit-border-radius: 0px; border-radius: 0px;" type="submit" class="btn btn-primary"> <span class="glyphicon glyphicon-search"></span></button>
+                        <input type="text" name="query" id="query" style="width:60%"><button type="submit" style="width:20%" class="btn btn-primary"> <span class="glyphicon glyphicon-search"></span></button>
                     </form>
                     <a href="#" onclick="toggleCrawlLinks()">Crawl Links</a>
                     <form id="crawlForm" style="display:none" method="get" action="/crawlLink">
